@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="Discover characters, explore stories, and start conversations on CharacterVerse.">
+  <title>CharacterVerse — Your Next Favorite Character</title>
+  <link rel="stylesheet" href="character.css">
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem("characterverse-theme");
+        document.documentElement.dataset.theme =
+          theme === "light" ? "light" : "dark";
+      } catch (error) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="CharacterVerse home">
+        <span class="logo-icon">✦</span>
+        <span>Character<span class="logo-accent">Verse</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#discover">Discover</a>
+        <a href="#popular">Popular</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch to light mode"
+          aria-pressed="false"
+          title="Switch theme"
+        >
+          <span id="themeIcon" aria-hidden="true">☀</span>
+          <span class="theme-label">Light mode</span>
+        </button>
+
+        <span class="demo-status"><span></span> Demo mode</span>
+
+        <button
+          class="mobile-menu"
+          id="mobileMenu"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span>✦</span> YOUR IMAGINATION, YOUR WORLD
+        </div>
+
+        <h1>
+          Every character has a
+          <span class="gradient-text">story.</span>
+          <br>
+          What's yours?
+        </h1>
+
+        <p class="hero-description">
+          Meet fascinating personalities, explore new worlds, and create
+          unforgettable conversations with characters you'll love.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#discover">
+            Explore characters <span>↗</span>
+          </a>
+          <a class="button button-secondary" href="#about">
+            Discover CharacterVerse
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>8+</strong>
+            <span>Characters</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div>
+            <strong>∞</strong>
+            <span>Possibilities</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div>
+            <strong>100%</strong>
+            <span>Imagination</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="discover-section section-padding" id="discover">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">FIND YOUR NEXT CONNECTION</span>
+            <h2>Discover characters</h2>
+            <p>Different personalities. Different worlds. One place to explore.</p>
+          </div>
+
+          <div class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search characters..."
+              aria-label="Search characters"
+              autocomplete="off"
+            >
+            <kbd>/</kbd>
+          </div>
+        </div>
+
+        <div class="filter-list" id="filterList" aria-label="Filter characters">
+          <button class="filter-button active" data-filter="All" type="button">All characters</button>
+          <button class="filter-button" data-filter="Fantasy" type="button">✧ Fantasy</button>
+          <button class="filter-button" data-filter="Romance" type="button">♡ Romance</button>
+          <button class="filter-button" data-filter="Adventure" type="button">⚔ Adventure</button>
+          <button class="filter-button" data-filter="Mystery" type="button">◈ Mystery</button>
+          <button class="filter-button" data-filter="Friendly" type="button">☻ Friendly</button>
+        </div>
+
+        <div class="character-grid" id="characterGrid"></div>
+
+        <div class="empty-state hidden" id="emptyState">
+          <span>⌕</span>
+          <h3>No characters found</h3>
+          <p>Try another search or choose a different category.</p>
+          <button class="button button-secondary" id="resetSearch" type="button">
+            Reset search
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-section section-padding" id="popular">
+      <div class="container popular-banner">
+        <div class="popular-copy">
+          <span class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</span>
+          <h2>Step into a different world.</h2>
+          <p>
+            From magical kingdoms to everyday conversations, discover a
+            character that matches your imagination.
+          </p>
+          <a class="button button-primary" href="#discover">
+            Find your character <span>↗</span>
+          </a>
+        </div>
+
+        <div class="popular-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="art-star star-one">✦</div>
+          <div class="art-star star-two">✧</div>
+          <div class="art-star star-three">✦</div>
+          <div class="art-center">✧</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section-padding" id="about">
+      <div class="container about-content">
+        <span class="eyebrow">ABOUT CHARACTERVERSE</span>
+        <h2>Your imagination has no limits.</h2>
+        <p>
+          CharacterVerse is a character discovery experience built for people
+          who love storytelling, roleplay, and exploring different personalities.
+          Browse characters and try the interactive demo.
+        </p>
+        <p class="about-note">
+          This version is a frontend demo. Conversations use sample responses
+          and do not connect to an AI service.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">✦</span>
+        <span>Character<span class="logo-accent">Verse</span></span>
+      </a>
+
+      <p>Made for stories yet to be told.</p>
+
+      <span class="footer-copy">© <span id="currentYear"></span> CharacterVerse</span>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop hidden" id="profileModal" role="presentation">
+    <section class="modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profileName">
+      <button class="modal-close" type="button" data-close="profileModal" aria-label="Close profile">×</button>
+      <div id="profileContent"></div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop hidden" id="chatModal" role="presentation">
+    <section class="modal chat-modal" role="dialog" aria-modal="true" aria-labelledby="chatCharacterName">
+      <div class="chat-header">
+        <div class="chat-character-info">
+          <div class="chat-avatar" id="chatAvatar"></div>
+          <div>
+            <h2 id="chatCharacterName">Character</h2>
+            <span class="online-indicator"><span></span> Demo conversation</span>
+          </div>
+        </div>
+        <button class="modal-close chat-close" type="button" data-close="chatModal" aria-label="Close chat">×</button>
+      </div>
+
+      <div class="demo-notice">
+        You're using a demo. Replies are sample messages, not AI-generated.
+      </div>
+
+      <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
+
+      <div class="suggestion-list" id="suggestionList">
+        <button type="button" data-message="Tell me about yourself">Tell me about yourself</button>
+        <button type="button" data-message="Let's go on an adventure">Let's go on an adventure</button>
+        <button type="button" data-message="Tell me a story">Tell me a story</button>
+      </div>
+
+      <form class="chat-composer" id="chatForm">
+        <input
+          id="chatInput"
+          type="text"
+          placeholder="Write a message..."
+          autocomplete="off"
+          maxlength="500"
+          aria-label="Write a message"
+          required
+        >
+        <button type="submit" aria-label="Send message">➤</button>
+      </form>
+      <p class="composer-footnote">Demo mode · Sample replies only</p>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="character.js"></script>
+</body>
+</html>
